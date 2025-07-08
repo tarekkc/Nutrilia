@@ -1,0 +1,172 @@
+@@ .. @@
+.gap-1 {
+    gap: 1rem;
+}
+
++/* Purchase Popup Styles */
++.purchase-popup {
++    position: fixed;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    background: rgba(0, 0, 0, 0.5);
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    z-index: 1003;
++    opacity: 0;
++    visibility: hidden;
++    transition: all 0.3s ease;
++}
++
++.purchase-popup.active {
++    opacity: 1;
++    visibility: visible;
++}
++
++.purchase-popup-content {
++    background: white;
++    border-radius: 12px;
++    padding: 2rem;
++    max-width: 500px;
++    width: 90%;
++    max-height: 90vh;
++    overflow-y: auto;
++    position: relative;
++    transform: scale(0.8);
++    transition: transform 0.3s ease;
++}
++
++.purchase-popup.active .purchase-popup-content {
++    transform: scale(1);
++}
++
++.popup-close {
++    position: absolute;
++    top: 1rem;
++    right: 1rem;
++    background: none;
++    border: none;
++    font-size: 1.5rem;
++    cursor: pointer;
++    color: #666;
++    width: 30px;
++    height: 30px;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    border-radius: 50%;
++    transition: background 0.3s ease;
++}
++
++.popup-close:hover {
++    background: #f0f0f0;
++}
++
++.popup-product-info {
++    display: flex;
++    align-items: center;
++    margin-bottom: 2rem;
++    padding-bottom: 1rem;
++    border-bottom: 1px solid #eee;
++}
++
++.popup-product-image {
++    width: 80px;
++    height: 80px;
++    object-fit: cover;
++    border-radius: 8px;
++    margin-right: 1rem;
++}
++
++.popup-product-details h3 {
++    margin: 0 0 0.5rem 0;
++    color: #2d5a27;
++}
++
++.popup-product-price {
++    font-size: 1.2rem;
++    font-weight: 700;
++    color: #2d5a27;
++}
++
++.popup-form-group {
++    margin-bottom: 1.5rem;
++}
++
++.popup-form-group label {
++    display: block;
++    margin-bottom: 0.5rem;
++    font-weight: 600;
++    color: #333;
++}
++
++.popup-form-group input,
++.popup-form-group select {
++    width: 100%;
++    padding: 0.75rem;
++    border: 2px solid #ddd;
++    border-radius: 8px;
++    font-size: 1rem;
++    transition: border-color 0.3s ease;
++}
++
++.popup-form-group input:focus,
++.popup-form-group select:focus {
++    outline: none;
++    border-color: #2d5a27;
++}
++
++.popup-total {
++    background: #f8f9fa;
++    padding: 1rem;
++    border-radius: 8px;
++    margin-bottom: 1.5rem;
++    text-align: center;
++}
++
++.popup-total-amount {
++    font-size: 1.3rem;
++    font-weight: 700;
++    color: #2d5a27;
++}
++
++.popup-submit-btn {
++    width: 100%;
++    padding: 1rem;
++    background: #2d5a27;
++    color: white;
++    border: none;
++    border-radius: 8px;
++    font-size: 1.1rem;
++    font-weight: 600;
++    cursor: pointer;
++    transition: background 0.3s ease;
++}
++
++.popup-submit-btn:hover {
++    background: #1e3a1b;
++}
++
++.popup-submit-btn:disabled {
++    background: #ccc;
++    cursor: not-allowed;
++}
++
++@media (max-width: 768px) {
++    .purchase-popup-content {
++        padding: 1.5rem;
++        margin: 1rem;
++    }
++    
++    .popup-product-info {
++        flex-direction: column;
++        text-align: center;
++    }
++    
++    .popup-product-image {
++        margin-right: 0;
++        margin-bottom: 1rem;
++    }
++}
